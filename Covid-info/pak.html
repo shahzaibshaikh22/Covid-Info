@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+ <div class="container">
+     <h1>Covid Information</h1>
+     <div class="nav">
+         <ul>
+             <li><a href="Global.html">Global</a></li>
+             <li><a href="pak.html"></a>Pakistan</li>
+         </ul>
+     </div>
+     <h1 id="pak"></h1>
+    <div class="cards">
+        <div class="card col-1">
+            <h2>Country</h2>
+            <p id="country"></p>
+        </div>
+        <div class="card col-2">
+            <h2>Country Code</h2>
+            <p id="country-code"></p>
+        </div>
+        <div class="card col-3">
+            <h2>New Confirmed</h2>
+            <p id="confirmed"></p>
+        </div>
+        <div class="card col-4">
+            <h2>New Deaths</h2>
+            <p id="deaths"></p>
+        </div>
+        <div class="card col-5">
+            <h2>Total Deaths</h2>
+            <p id="todeaths"></p>
+        </div>
+        <div class="card col-6">
+            <h2>Total Confirmed</h2>
+            <p id="totalconfirmed"></p>
+        </div>
+        <div class="card col-7">
+            <h2>New Recoverd</h2>
+            <p id="recoverd"></p>
+        </div>
+        <div class="card col-8">
+            <h2>Total Recoverd</h2>
+            <p id="totalrecovered"></p>
+        </div>
+    </div>
+     
+ </div>
+
+ <!-- Country: "Pakistan"
+ CountryCode: "PK"
+ Date: "2022-02-02T10:01:04.344Z"
+ ID: "6adf946a-5db3-4c06-8b8d-30e9baaf7ca1"
+ NewConfirmed: 5327
+ NewDeaths: 32
+ NewRecovered: 0
+ Premium: {}
+ Slug: "pakistan"
+ TotalConfirmed: 1430366
+ TotalDeaths: 29301
+ TotalRecovered: 0
+ [[Prototype]]: Object -->
+
+
+
+
+<script>
+    const country = document.getElementById('country');
+    const countryCode = document.getElementById('country-code');
+    const confirmed = document.getElementById('confirmed');
+    const deaths = document.getElementById('deaths');
+    const todeaths = document.getElementById('todeaths');
+    const totalconfirmed = document.getElementById('totalconfirmed');
+    const totalrecovered = document.getElementById('totalrecovered');
+    const recovered = document.getElementById('recoverd');
+    const pak = document.getElementById('pak');
+
+
+
+    fetch('http://api.covid19api.com/summary').then((data) =>{
+        // console.log(data);
+        return data.json();
+    }).then((completedata) =>{
+        const allData = completedata.Countries[129];
+        pak.innerHTML= allData.Slug
+        country.innerHTML= allData.Country
+        countryCode.innerHTML= allData.CountryCode
+        confirmed.innerHTML= allData.NewConfirmed
+        deaths.innerHTML= allData.NewDeaths
+        todeaths.innerHTML= allData.TotalDeaths
+        totalconfirmed.innerHTML= allData.TotalConfirmed
+        totalrecovered.innerHTML= allData.TotalRecovered
+        recovered.innerHTML= allData.NewRecovered
+        // console.log(completedata.Global);
+       
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

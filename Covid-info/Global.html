@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+ <div class="container">
+     <h1>Covid Information</h1>
+     <div class="nav">
+         <ul>
+             <li><a href="Global.html">Global</a></li>
+             <li><a href="pak.html">Pakistan</a></li>
+         </ul>
+     </div>
+     <h1>Global</h1>
+    <div class="cards">
+        <div class="card col-2">
+            <h2>New Confirmed</h2>
+            <p id="confirmed"></p>
+        </div>
+        <div class="card col-4">
+            <h2>New Deaths</h2>
+            <p id="deaths"></p>
+        </div>
+        <div  class="card col-1">
+            <h2>New Recoverd</h2>
+            <p id="recoverd"></p>
+        </div>
+        <div class="card col-3">
+            <h2>Total Deaths </h2>
+            <p id="todeaths"></p>
+        </div>
+        <div class="card col-5">
+            <h2>Total Recoverd</h2>
+            <p id="totalrecovered"></p>
+        </div>
+        <div  class="card col-6">
+            <h2>Total Confirmed</h2>
+            <p id="totalconfirmed"></p>
+        </div>
+    </div>
+     
+ </div>
+
+ <!-- Date: "2022-02-02T10:52:01.225Z"
+NewConfirmed: 3368438
+NewDeaths: 8957
+NewRecovered: 0
+TotalConfirmed: 378639918
+TotalDeaths: 5672772
+TotalRecovered: 0 -->
+
+
+
+
+<script>
+    const confirmed = document.getElementById('confirmed');
+    const deaths = document.getElementById('deaths');
+    const recovered = document.getElementById('recoverd');
+    const TotalConfirmed = document.getElementById('totalconfirmed');
+    const totaldeaths = document.getElementById('todeaths');
+    const totalrecovered = document.getElementById('totalrecovered');
+    fetch('http://api.covid19api.com/summary').then((data) =>{
+        // console.log(data);
+        return data.json();
+    }).then((completedata) =>{
+        const allData = completedata.Global;
+        confirmed.innerHTML= allData.NewConfirmed
+        deaths.innerHTML= allData.NewDeaths
+        recovered.innerHTML= allData.NewRecovered
+        TotalConfirmed.innerHTML= allData.TotalConfirmed
+        totaldeaths.innerHTML= allData.TotalDeaths
+        totalrecovered.innerHTML= allData.TotalRecovered
+        // console.log(completedata.Global);
+       
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

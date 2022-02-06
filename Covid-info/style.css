@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shadows+Into+Light&family=Source+Sans+Pro:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    color: #1b1b1b;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container .nav{
+    width: 30rem;
+    height: 4rem;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    border-radius: .5rem;
+    margin: 1rem 0;
+}
+.nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    height: 4rem;
+    align-items: center;
+}
+.nav ul li{
+    margin: 0 2rem;
+    font-size: 1.2rem;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    /* position: relative;
+    width: 0%; */
+}
+ul li a{
+    text-decoration: none;
+    color: #1b1b1b;
+}
+/* .nav ul li::before{
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    background-color: deepskyblue;
+    left: 0;
+    bottom: 0;
+} */
+
+.nav ul li a:hover{
+    color: deepskyblue;
+}
+.container .cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.container .card{
+    width: 15rem;
+    height: 10rem;
+    border-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    border-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: .7rem;
+    color: #fff;
+}
+.container .card #country,
+ #country-code,
+ #confirmed,
+ #deaths,
+ #todeaths,
+ #totalconfirmed,
+ #totalrecovered,
+ #recoverd{
+    font-size: 2rem;
+    color: #fff;
+    margin: .2rem 0;
+    padding: .2rem;
+}
+.col-1{
+    background-color: crimson;
+}
+.col-2{
+    background-color: darkcyan;
+}
+.col-3{
+    background-color: rgb(95, 240, 196);
+}
+.col-4{
+    background-color: rgb(255, 38, 0);
+}
+.col-5{
+    background-color: rgb(33, 13, 104);
+}
+.col-6{
+    background-color: rgb(105, 235, 45);
+}
+.col-7{
+    background-color: rgb(245, 111, 193);
+}
+.col-8{
+    background-color: rgb(220, 173, 20);
+}
+
+
+
+
+
+
+
+
+
+
+
+
